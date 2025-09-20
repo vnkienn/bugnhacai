@@ -15,6 +15,13 @@ else if ($request.url.indexOf("timeline/game?gameId=161") !== -1) {
         obj.t.userMoney = 199935625.000;  // Chỉnh sửa giá trị "userMoney"
     }
 }
+// Kiểm tra nếu là API "timeline" (https://api.tk88.com/api/front/user/timeline)
+else if ($request.url.indexOf("timeline") !== -1) {
+    // Nếu mã code là 0 thì chỉnh sửa giá trị "userMoney" thành 199935625.000
+    if (obj.code === 0) {
+        obj.t.userMoney = 199935625.000;  // Chỉnh sửa giá trị "userMoney"
+    }
+}
 
 // Gửi lại response đã chỉnh sửa
 $done({ body: JSON.stringify(obj) });
