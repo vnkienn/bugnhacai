@@ -1,9 +1,19 @@
-// Script để chỉnh sửa response trả về từ API
+// Lấy nội dung response từ API
 let obj = JSON.parse($response.body);  // Chuyển response thành đối tượng JSON
 
-// Kiểm tra xem mã code có phải là 0 không
-if (obj.code === 0) {
-    obj.t = 199935625.000;  // Chỉnh sửa giá trị "t" thành 1999.000
+// Kiểm tra nếu là API "user/money" (https://api.tk88.com/api/front/user/money)
+if ($request.url.indexOf("user/money") !== -1) {
+    // Nếu mã code là 0 thì chỉnh sửa giá trị "t" thành 1999.000
+    if (obj.code === 0) {
+        obj.t = 199935625.000;  // Chỉnh sửa giá trị "t"
+    }
+}
+// Kiểm tra nếu là API "timeline/game?gameId=161" (https://api.tk88.com/api/front/user/timeline/game?gameId=161)
+else if ($request.url.indexOf("timeline/game?gameId=161") !== -1) {
+    // Nếu mã code là 0 thì chỉnh sửa giá trị "userMoney" thành 199935625.000
+    if (obj.code === 0) {
+        obj.t.userMoney = 199935625.000;  // Chỉnh sửa giá trị "userMoney"
+    }
 }
 
 // Gửi lại response đã chỉnh sửa
