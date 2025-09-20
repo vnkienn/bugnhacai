@@ -1,0 +1,11 @@
+#!url=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/bugnhacai.sgmodule
+#!name=baonhacai
+#!desc=Crack By Ohoang7
+
+[Script]
+
+
+revenuecat = type=http-response, pattern=^https:\/\/api\.tk88\.com\/api\/front\/user\/money$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% api.tk88.com
