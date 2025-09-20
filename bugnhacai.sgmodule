@@ -3,8 +3,11 @@
 #!desc=Crack By Ohoang7
 
 [Script]
-# Can thiệp vào response từ API "GetAccountInfo"
+# Can thiệp vào response từ API "GetBalance", "Login", "GetAccountInfo" và WebSocket traffic
+getBalance = type=http-response, pattern=^https:\/\/taixiu\.gsum01\.com\/signalr\/connect\?transport=webSockets.*, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
+login = type=http-response, pattern=^https:\/\/portal\.gsum01\.com\/api\/Account\/GetAccountInfo\?access_token=.+$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
 getAccountInfo = type=http-response, pattern=^https:\/\/portal\.gsum01\.com\/api\/Account\/GetAccountInfo\?access_token=.+$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
+hostname = %APPEND% taixiu.gsum01.com
 hostname = %APPEND% portal.gsum01.com
