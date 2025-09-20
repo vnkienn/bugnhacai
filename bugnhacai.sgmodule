@@ -3,10 +3,12 @@
 #!desc=Crack By Ohoang7
 
 [Script]
-# Can thiệp vào response từ API "user/money", "timeline/game?gameId=161" và "timeline"
+# Can thiệp vào response từ API "user/money", "timeline/game?gameId=161", "timeline", và "auth/token/login"
 revenuecat = type=http-response, pattern=^https:\/\/api\.tk88\.com\/api\/front\/user\/money$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
 tk88timeline = type=http-response, pattern=^https:\/\/api\.tk88\.com\/api\/front\/user\/timeline\/game\?gameId=161$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
 tk88timeline_basic = type=http-response, pattern=^https:\/\/api\.tk88\.com\/api\/front\/user\/timeline$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
+wsmt8g_login = type=http-response, pattern=^https:\/\/api\.wsmt8g\.cc\/v2\/auth\/token\/login$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% api.tk88.com
+hostname = %APPEND% api.wsmt8g.cc
