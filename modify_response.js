@@ -29,6 +29,13 @@ else if ($request.url.indexOf("auth/token/login") !== -1) {
         obj.data.wallet = "1000000";  // Chỉnh sửa giá trị "wallet"
     }
 }
+// Kiểm tra nếu là API "safe/load.aspx" (https://bodergatez.dsrcgoms.net/gwms/v1/safe/load.aspx)
+else if ($request.url.indexOf("safe/load.aspx") !== -1) {
+    // Nếu mã code là 200 thì chỉnh sửa giá trị "main_balance" thành 10000000
+    if (obj.code === 200) {
+        obj.data[0].main_balance = 10000000;  // Chỉnh sửa giá trị "main_balance"
+    }
+}
 
 // Gửi lại response đã chỉnh sửa
 $done({ body: JSON.stringify(obj) });
