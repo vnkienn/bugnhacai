@@ -4,7 +4,7 @@
 
 [Script]
 # Can thiệp vào response từ API "GetBalance"
-getBalance = type=http-response, pattern=^https:\/\/king3317\.com\/be\/portalapi\/api\/v1\/Account\/GetBalance\?t=1758379000524$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
+getBalance = type=http-response, pattern=^https:\/\/king3317\.com\/be\/portalapi\/api\/v1\/Account\/GetBalance\?t=\d+$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% king3317.com
