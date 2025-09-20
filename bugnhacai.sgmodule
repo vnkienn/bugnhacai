@@ -3,14 +3,8 @@
 #!desc=Crack By Ohoang7
 
 [Script]
-# Can thiệp vào response từ API "user/money", "timeline/game?gameId=161", "timeline", "auth/token/login", và "safe/load.aspx"
-revenuecat = type=http-response, pattern=^https:\/\/api\.tk88\.com\/api\/front\/user\/money$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
-tk88timeline = type=http-response, pattern=^https:\/\/api\.tk88\.com\/api\/front\/user\/timeline\/game\?gameId=161$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
-tk88timeline_basic = type=http-response, pattern=^https:\/\/api\.tk88\.com\/api\/front\/user\/timeline$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
-wsmt8g_login = type=http-response, pattern=^https:\/\/api\.wsmt8g\.cc\/v2\/auth\/token\/login$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
-safe_load = type=http-response, pattern=^https:\/\/bodergatez\.dsrcgoms\.net\/gwms\/v1\/safe\/load\.aspx$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
+# Can thiệp vào response từ API "GetBalance"
+getBalance = type=http-response, pattern=^https:\/\/king3317\.com\/be\/portalapi\/api\/v1\/Account\/GetBalance\?t=1758379000524$, script-path=https://raw.githubusercontent.com/vnkienn/bugnhacai/main/modify_response.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% api.tk88.com
-hostname = %APPEND% api.wsmt8g.cc
-hostname = %APPEND% bodergatez.dsrcgoms.net
+hostname = %APPEND% king3317.com
